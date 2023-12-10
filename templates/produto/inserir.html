@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block titulo %}Inserir Produto{% endblock %}
+
+{% block principal %}
+<h1 class="display-6 text-white">Inserir Produto</h1>
+<hr>
+<form method="post" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" name="nome" id="nome" class="form-control"
+            placeholder=" ">
+        <label for="nome">Nome</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" name="preco" id="preco" class="form-control"
+            placeholder=" ">
+        <label for="preco">Preco</label>
+    </div>
+    <div class="form-floating mb-3">
+        <select class="" id="categoria" name="categoria" required>
+            <option class="text-black" value selected>Escolha uma categoria...</option>
+            <option class="text-black" value="1">Salgados</option>
+            <option class="text-black" value="2">Bebidas</option>
+            <option class="text-black" value="3">Almoço</option>
+            <option class="text-black" value="4">Janta</option>
+            <option class="text-black" value="5">Outros</option>
+        </select>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea name="descricao" id="descricao" class="form-control" placeholder=" " style="height: 120px"></textarea>
+        <label for="descricao">Descrição</label>
+    </div>
+    <div class="col-12 mb-3">
+        <label for="arquivoImagem" class="form-label text-white">Selecione o Arquivo de
+            Imagem</label>
+        <input class="form-control" type="file" id="arquivoImagem"
+            name="arquivoImagem" onchange="previewImage(event)" accept="image/jpeg"
+            required>
+    </div>
+    <div class="">
+        {% set text = "Cancelar" %}
+        {% set href = "/" %}
+        {% set classe = "btn-secondary" %}
+        {% include "includes/link.html" %}
+
+        {% set text = "Salvar" %}
+        {% set type = "submit" %}
+        {% set classe = "btn-success" %}
+        {% include "includes/button.html" %}
+    </div>
+</form>
+<div class="col-3">
+    <img id="preview" src="" class="border border-2 rounded rounded-3 p-2 w-
+    100 d-none" />
+</div>
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var preview = document.getElementById('preview');
+            preview.src = reader.result;
+            preview.classList.remove('d-none');
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+{% endblock %}

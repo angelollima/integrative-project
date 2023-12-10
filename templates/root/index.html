@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block titulo %}Principal{% endblock %}
+
+{% block principal %}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 rowcols-xxl-6 g-4 mb-0">
+    {% for p in produtos: %}
+        <div class="col">
+            <div class="includes card h-100">
+                <img src="/static/img/produtos/{{ '%04d'|format(p.id) }}.jpg" class="card" alt="{{ p.nome }}">
+                    <div class="includes card-body">
+                        <h5 class="card-title text-white">{{ p.nome }}</h5>
+                        <div class="texto-3-linhas">
+                            <p class="card-text text-white">
+                                {{ p.descricao }}
+                            </p>
+                        </div>
+                        <p class="card-text">
+                            <small class="text-white">R${{ p.preco }}</small>
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        {% set text = "Detalhes" %}
+                        {% set href = "/produto/" ~ p.id %}
+                        {% set classe = "btn-secondary" %}
+                        {% include "includes/link.html" %}
+                        
+                        {% set text = "Comprar" %}
+                        {% set type = "submit" %}
+                        {% set classe = "btn-success" %}
+                        {% include "includes/button.html" %}
+                    </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

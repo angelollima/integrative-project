@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block titulo %}Excluir Produto{% endblock %}
+
+{% block principal %}
+<h1 class="display-6 text-white">Excluir Produto</h1>
+<hr>
+<p class="lead text-white">
+    Deseja realmente excluir o produto <b>{{produto.nome}}</b>?
+</p>
+<p>
+    <img src="/static/img/produtos/{{ '{:04d}'.format(produto.id)}}.jpg"
+        alt="{{produto.nome}}" class="img-thumbnail" width="128">
+</p>
+<form method="post">
+    <input type="hidden" name="id_produto" value="{{produto.id}}">
+    <div>
+        {% set text = "Não" %}
+        {% set href = "/" %}
+        {% set classe = "btn-success" %}
+        {% include "includes/link.html" %}
+        
+        {% set text = "Sim" %}
+        {% set type = "submit" %}
+        {% set classe = "btn-danger" %}
+        {% include "includes/button.html" %}
+    </div>
+</form>
+{% endblock %}

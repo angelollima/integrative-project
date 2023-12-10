@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block titulo %}Detalhes{% endblock %}
+
+{% block principal %}
+<div class="col-12 text-white">
+    <div class="row">
+        <div class="col-3 mb-4">
+            <img src="/static/img/produtos/{{ '%04d'|format(produto.id) }}.jpg" alt="" class="img-fluid rounded">
+        </div>
+        <div class="col-9 mb-4">
+            <h1>{{ produto.nome }}</h1>
+            <h6 class="display-6">Por apenas</h6>
+            <h3 class="text-danger">R$ {{ produto.preco }}</h3>
+            <hr>
+            {% set text = "Comprar Agora!" %}
+            {% set type = "button" %}
+            {% set classe = "btn-success btn-lg" %}
+            {% include "includes/button.html" %}
+        </div>
+    </div>
+</div>
+<div class="col-12 text-white">
+    <p class="lead">Descrição:</p>
+    <p>{{ produto.descricao }}</p>
+</div>
+{% endblock %}

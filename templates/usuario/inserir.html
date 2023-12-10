@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block titulo %}Cadastrar Usuário{% endblock %}
+
+{% block principal %}
+<form method="post" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" name="nome" id="nome" class="form-control" placeholder=" " required="" autofocus="">
+        <label for="nome">Nome</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" name="email" id="email" class="form-control" placeholder=" " required="">
+        <label for="email">E-mail</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" name="senha" id="senha" class="form-control" placeholder=" " required="">
+        <label for="senha">Senha</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" name="confsenha" id="confsenha" class="form-control" placeholder=" " required="">
+        <label for="confsenha">Confirmação de Senha</label>
+    </div>
+    <div>
+        {% set text = "Cancelar" %}
+        {% set href = "/" %}
+        {% set classe = "btn-secondary" %}
+        {% include "includes/link.html" %}
+
+        {% set text = "Salvar" %}
+        {% set type = "submit" %}
+        {% set classe = "btn-success" %}
+        {% include "includes/button.html" %}
+    </div>
+</form>
+{% endblock %}

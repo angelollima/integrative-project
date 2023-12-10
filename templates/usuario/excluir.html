@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %}Excluir Usuário{% endblock %}
+
+{% block principal %}
+<h1 class="display-6 text-white">Excluir Usuário</h1>
+<hr>
+<p class="lead text-white">
+    Deseja realmente excluir o usuário <b>{{usuario_excluir.nome}}</b>?
+</p>
+<form method="post">
+    <input type="hidden" name="id_usuario" value="{{usuario_excluir.id}}">
+    <div>
+        {% set text = "Não" %}
+        {% set href = "/" %}
+        {% set classe = "btn-success" %}
+        {% include "includes/link.html" %}
+
+        {% set text = "Sim" %}
+        {% set type = "submit" %}
+        {% set classe = "btn-danger" %}
+        {% include "includes/button.html" %}
+    </div>
+</form>
+{% endblock %}
