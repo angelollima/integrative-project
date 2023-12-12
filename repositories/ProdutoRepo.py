@@ -21,7 +21,7 @@ class ProdutoRepo:
         try:
             with criar_conexao() as conexao:
                 cursor = conexao.cursor()
-                cursor.execute(SQL_INSERIR, (produto.nome, produto.preco, produto.categoria, produto.descricao))
+                cursor.execute(SQL_INSERIR_PRODUTO, (produto.nome, produto.preco, produto.descricao, produto.categoria))
                 if cursor.rowcount > 0:
                     produto.id = cursor.lastrowid
                     return produto

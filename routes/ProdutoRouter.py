@@ -55,6 +55,9 @@ async def post_inserir(nome: str = Form(...), preco: str = Form(...), descricao:
         categoria_input = categorias.get(categoria)
     
     produto = Produto(nome=nome, preco=preco, descricao=descricao, categoria=categoria_input)
+
+    print(produto)
+    
     ProdutoRepo.inserir(produto)
 
     if arquivoImagem.filename:

@@ -8,7 +8,7 @@ SQL_CRIAR_TABELA = """
     )
 """
 
-SQL_INSERIR = """
+SQL_INSERIR_PRODUTO = """
     INSERT INTO produto (nome, preco, descricao, categoria)
     VALUES (?, ?, ?, ?)
 """

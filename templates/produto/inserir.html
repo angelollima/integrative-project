@@ -16,8 +16,9 @@
             placeholder=" ">
         <label for="preco">Preco</label>
     </div>
-    <div class="custom-select">
-        <select required>
+
+    <div class="form-floating mb-3">
+        <select class="select-control" id="categoria" name="categoria" required>
             <option class="text-black" value selected>Escolha uma categoria...</option>
             <option class="text-black" value="1">Salgados</option>
             <option class="text-black" value="2">Bebidas</option>
@@ -26,6 +27,7 @@
             <option class="text-black" value="5">Outros</option>
         </select>
     </div>
+    
     <div class="form-floating mb-3">
         <textarea name="descricao" id="descricao" class="form-control" placeholder=" " style="height: 120px"></textarea>
         <label for="descricao">Descrição</label>
