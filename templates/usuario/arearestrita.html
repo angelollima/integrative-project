@@ -19,7 +19,10 @@
                 <label for="email">E-mail</label>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary">Salvar Dados</button>
+                {% set text = "Salvar Dados" %}
+                {% set type = "submit" %}
+                {% set classe = "btn-success" %}
+                {% include "includes/button.html" %}
             </div>
         </form>
     </div>
@@ -39,7 +42,10 @@
                 <label for="conf_nova_senha">Confirme a Nova Senha</label>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary">Salvar Nova Senha</button>
+                {% set text = "Salvar Nova Senha" %}
+                {% set type = "submit" %}
+                {% set classe = "btn-success" %}
+                {% include "includes/button.html" %}
             </div>
         </form>
     </div>
