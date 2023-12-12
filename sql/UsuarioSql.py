@@ -83,3 +83,9 @@ SQL_EXISTE_EMAIL = """
  WHERE email=?
  )
 """
+
+SQL_ALTERAR_SENHA_EMAIL ="""
+    UPDATE usuario
+    SET senha=?
+    WHERE email=?
+"""

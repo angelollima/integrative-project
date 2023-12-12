@@ -121,3 +121,10 @@ class UsuarioRepo:
             resultado = cursor.execute(SQL_EXISTE_EMAIL, (email,)).fetchone()
             if resultado:
                 return bool(resultado[0])
+
+    @classmethod
+    def alterar_senha(cls, usuario: Usuario) -> bool or False:
+        with criar_conexao() as conexao:
+            cursor = conexao.cursor()
+            cursor.execute(SQL_ALTERAR_SENHA_EMAIL, (usuario.senha, usuario.email ))
+            return cursor.rowcount > 0

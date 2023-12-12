@@ -4,30 +4,27 @@
 {% block titulo %}Área Restrita{% endblock %}
 
 {% block principal %}
-<h1 class="display-6">Área Restrita</h1>
+<h1 class="display-6 text-white">Área Restrita</h1>
 <hr>
 <div class="row">
     <div class="col-6">
-        <h2>Alterar Dados</h2>
+        <h2 class="text-white">Alterar Dados</h2>
         <form method="post" action="/usuario/alterardados">
             <div class="form-floating mb-3">
-                <input type="text" name="nome" id="nome" class="form-control" placeholder=" " value="{{ usuario_alterar.nome }}" required="">
+                <input type="text" name="nome" id="nome" class="form-control" placeholder=" " value="{{ usuario.nome }}" required="">
                 <label for="nome">Nome</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" name="email" id="email" class="form-control" placeholder=" " value="{{ usuario_alterar.email }}" required="">
+                <input type="email" name="email" id="email" class="form-control" placeholder=" " value="{{ usuario.email }}" required="">
                 <label for="email">E-mail</label>
             </div>
             <div>
-                {% set text = "Salvar dados" %}
-                {% set type = "submit" %}
-                {% set classe = "btn-success" %}
-                {% include "includes/button.html" %}
+                <button type="submit" class="btn btn-primary">Salvar Dados</button>
             </div>
         </form>
     </div>
     <div class="col-6">
-        <h2>Alterar Senha</h2>
+        <h2 class="text-white">Alterar Senha</h2>
         <form method="post" action="/usuario/alterarsenha">
             <div class="form-floating mb-3">
                 <input type="password" name="senha_atual" id="senha_atual" class="form-control" placeholder=" " required="">
@@ -42,10 +39,7 @@
                 <label for="conf_nova_senha">Confirme a Nova Senha</label>
             </div>
             <div>
-                {% set text = "Salvar nova senha" %}
-                {% set type = "submit" %}
-                {% set classe = "btn-success" %}
-                {% include "includes/button.html" %}
+                <button type="submit" class="btn btn-primary">Salvar Nova Senha</button>
             </div>
         </form>
     </div>

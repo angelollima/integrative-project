@@ -29,7 +29,7 @@
                             {% if usuario.admin: %}
                                 <a class="nav-link text-center text-white {{'active' if request.url.path == '/produto/'}}" href="/produto">Produtos</a>
                                 <a class="nav-link text-center text-white {{'active' if request.url.path == '/usuario/'}}" href="/usuario">Usuários</a>
-                                <a class="nav-link  text-success" href="/usuario/arearestrita/1">Área Restrita</a>
+                                <a class="nav-link  text-success" href="/usuario/arearestrita">Área Restrita</a>
                             {% endif %}
                             <a class="nav-link text-center text-white {{'active' if request.url.path == '/logout'}}" href="/logout">Sair</a>
                         {% endif %}
