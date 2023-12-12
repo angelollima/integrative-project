@@ -37,7 +37,7 @@
             name="arquivoImagem" onchange="previewImage(event)" accept="image/jpeg"
             required>
     </div>
-    <div class="">
+    <div class="mb-3">
         {% set text = "Cancelar" %}
         {% set href = "/" %}
         {% set classe = "btn-secondary" %}
@@ -50,8 +50,7 @@
     </div>
 </form>
 <div class="col-3">
-    <img id="preview" src="" class="border border-2 rounded rounded-3 p-2 w-
-    100 d-none" />
+    <img id="preview" src="" class="border border-2 rounded rounded-3 p-2 w-100 d-none" />
 </div>
 <script>
     function previewImage(event) {
