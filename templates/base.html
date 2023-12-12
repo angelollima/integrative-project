@@ -30,6 +30,8 @@
                         <a
                             class="nav-link text-center text-white {{'active' if request.url.path == '/'}}"
                             href="/">Principal</a>
+                            <a class="nav-link text-center text-success {{'active' if request.url.path == '/arearestrita'}}"
+                            href="/arearestrita">Área Restrita</a>
                         {% if not usuario: %}
                         <a
                             class="nav-link text-center text-success {{'active' if request.url.path == '/usuario/novo'}}"
@@ -45,8 +47,6 @@
                         <a
                             class="nav-link text-center text-white {{'active' if request.url.path == '/usuario/'}}"
                             href="/usuario">Usuários</a>
-                        <a class="nav-link text-center text-success {{'active' if request.url.path == '/usuario/arearestrita'}}"
-                            href="/usuario/arearestrita">Área Restrita</a>
                         {% endif %}
                         <a
                             class="nav-link text-center text-white {{'active' if request.url.path == '/logout'}}"
