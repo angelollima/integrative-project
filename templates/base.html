@@ -17,11 +17,11 @@
                     <img src="/static/img/logotipo.svg"
                         alt="Logotipo Loja Virtual" height="48">
                 </a>
-                <button class="navbar-toggler text-white" type="button"
+                <button class="navbar-toggler bg-secondary bg-opacity-50 text-white" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarPrincipal"
                     aria-controls="navbarPrincipal" aria-expanded="false"
                     aria-label="Toggle navigation">
-                    <span class="bi bi-list navbar-toggler-icon text-white" ></span>
+                    <span class=" d-flex align-items-center justify-content-center text-white" ><i class="bi bi-list"></i></span>
                     
                 </button>
                 <div class="collapse navbar-collapse justify-content-end text-white"
@@ -30,8 +30,6 @@
                         <a
                             class="nav-link text-center text-white {{'active' if request.url.path == '/'}}"
                             href="/">Principal</a>
-                            <a class="nav-link text-center text-success {{'active' if request.url.path == '/arearestrita'}}"
-                            href="/arearestrita">Área Restrita</a>
                         {% if not usuario: %}
                         <a
                             class="nav-link text-center text-success {{'active' if request.url.path == '/usuario/novo'}}"
@@ -48,6 +46,8 @@
                             class="nav-link text-center text-white {{'active' if request.url.path == '/usuario/'}}"
                             href="/usuario">Usuários</a>
                         {% endif %}
+                        <a class="nav-link text-center text-success {{'active' if request.url.path == '/arearestrita'}}"
+                            href="/arearestrita">Área Restrita</a>
                         <a
                             class="nav-link text-center text-white {{'active' if request.url.path == '/logout'}}"
                             href="/logout">Sair</a>
