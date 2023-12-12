@@ -137,15 +137,14 @@ async def alterar_dados(
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
     if not usuario.admin:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)
-    
-    UsuarioRepo.alterar(
-    Usuario(id=usuario.id, nome=nome, email=email, admin=usuario.admin)
-    )
 
-    response = redirecionar_com_mensagem(
-    "/usuario/arearestrita",
-    "Dados alterados com sucesso.",
-    )
+    if usuario.id == 1:
+        response = redirecionar_com_mensagem("/usuario", "Não é possível alterar dados do administrador padrão.",)
+        return response
+    
+    UsuarioRepo.alterar(Usuario(id=usuario.id, nome=nome, email=email, admin=usuario.admin))
+
+    response = redirecionar_com_mensagem("/usuario/arearestrita", "Dados alterados com sucesso.",)
 
     return response
 
